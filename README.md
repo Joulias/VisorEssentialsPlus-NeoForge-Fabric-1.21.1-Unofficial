@@ -1,13 +1,20 @@
-# VisorEssentialsPlus
+# VisorEssentialsPlus NeoForge & Fabric 1.21.1 Unofficial
 
-This is an expanded version of VisorEssentials 0.4.0 for Minecraft 1.21.1 on
-Fabric and NeoForge. It adds custom buttons, a creative inventory menu, and
-support for other add-ons that rely on VisorEssentialsPlus to function.
+This is the unofficial NeoForge and Fabric 1.21.1 version of
+VisorEssentialsPlus. It adds custom buttons, a creative inventory menu that is
+only visible in creative mode, and support for other add-ons that rely on
+VisorEssentialsPlus.
 
-Requires [Visor 0.4.0](https://github.com/VisorModStudio/Visor) and Java 21,
-plus one of the following matching loader setups:
+> [!WARNING]
+> This add-on is made for the unofficial Visor 0.4.0 builds in this repository
+> series. Use the Visor JAR that matches your mod loader.
 
-- Fabric Loader 0.18.4 or newer with Fabric API 0.116.13 or newer
-- NeoForge 21.1.234 or newer
+## Compatibility
+
+- Minecraft 1.21.1
+- Java 21
+- Fabric Loader 0.18.4 or newer with Fabric API 0.116.13 or newer, plus
+  `Visor-0.4.0-Fabric-1.21.1-Unofficial.jar`
+- NeoForge 21.1.234 or newer, plus the matching unofficial Visor NeoForge JAR
 
 Based on the original VisorEssentials project by PhoenixRa.
