@@ -58,7 +58,8 @@ public class VROverlayInventory extends VROverlayScreenInScreen<Screen> implemen
         var usedHand = getUsedHand();
         if(usedHand == null
                 || event.getHand() != usedHand
-                || event.getNewOverlay() == null){
+                || event.getNewOverlay() == null
+                || event.getNewOverlay() instanceof VROverlayDraggedItem){
             return;
         }
         //don't focus hand that is used by inventory

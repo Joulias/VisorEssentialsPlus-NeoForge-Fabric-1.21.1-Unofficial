@@ -76,29 +76,22 @@ public class VROverlayDraggedItem extends VROverlayScreen
             return false;
         }
         var cursorHandler = VisorAPI.client().getGuiManager().getCursorHandler();
-        if(supportsDragging(cursorHandler.getFocusedOverlay())){
-            return false;
-        }
-
         if(!VisorAPI.client().getVRLocalPlayer().getRawController(
                      cursorHandler.getCursorHand()
                 ).isTracking()){
             return false;
         }
 
-        if(isVisible()){
-            var cursorResult  = cursorHandler.getCursorResult(
-                    cursorHandler.getCursorHand(),
-                    VisorAPI.client().getVRLocalPlayer().getPoseData(PlayerPoseType.RENDER),
-                    it->it != this,
-                    false
-            );
-            if(supportsDragging(cursorResult.focusedOverlay())){
-                return false;
-            }
-
-        }
-        return true;
+        // Query the current controller ray instead of cached focus. Cached focus
+        // may still point at the inventory after the hand has moved outside it,
+        // which would otherwise prevent this drop target from ever appearing.
+        var cursorResult = cursorHandler.getCursorResult(
+                cursorHandler.getCursorHand(),
+                VisorAPI.client().getVRLocalPlayer().getPoseData(PlayerPoseType.RENDER),
+                it -> it != this,
+                false
+        );
+        return !supportsDragging(cursorResult.focusedOverlay());
     }
 
 
